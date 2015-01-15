@@ -25,16 +25,16 @@ pub trait LoopAdditiveApprox
     + IdentityAdditive
 {}
 
-impl LoopAdditiveApprox for u8   {}
-impl LoopAdditiveApprox for u16  {}
-impl LoopAdditiveApprox for u32  {}
-impl LoopAdditiveApprox for u64  {}
-impl LoopAdditiveApprox for uint {}
-impl LoopAdditiveApprox for i8   {}
-impl LoopAdditiveApprox for i16  {}
-impl LoopAdditiveApprox for i32  {}
-impl LoopAdditiveApprox for i64  {}
-impl LoopAdditiveApprox for int  {}
+impl LoopAdditiveApprox for u8    {}
+impl LoopAdditiveApprox for u16   {}
+impl LoopAdditiveApprox for u32   {}
+impl LoopAdditiveApprox for u64   {}
+impl LoopAdditiveApprox for usize {}
+impl LoopAdditiveApprox for i8    {}
+impl LoopAdditiveApprox for i16   {}
+impl LoopAdditiveApprox for i32   {}
+impl LoopAdditiveApprox for i64   {}
+impl LoopAdditiveApprox for isize {}
 
 /// An additive quasigroup with a corresponding identity.
 pub trait LoopAdditive
@@ -42,16 +42,16 @@ pub trait LoopAdditive
     + QuasigroupAdditive
 {}
 
-impl LoopAdditive for u8   {}
-impl LoopAdditive for u16  {}
-impl LoopAdditive for u32  {}
-impl LoopAdditive for u64  {}
-impl LoopAdditive for uint {}
-impl LoopAdditive for i8   {}
-impl LoopAdditive for i16  {}
-impl LoopAdditive for i32  {}
-impl LoopAdditive for i64  {}
-impl LoopAdditive for int  {}
+impl LoopAdditive for u8    {}
+impl LoopAdditive for u16   {}
+impl LoopAdditive for u32   {}
+impl LoopAdditive for u64   {}
+impl LoopAdditive for usize {}
+impl LoopAdditive for i8    {}
+impl LoopAdditive for i16   {}
+impl LoopAdditive for i32   {}
+impl LoopAdditive for i64   {}
+impl LoopAdditive for isize {}
 
 /// An aproximate multiplicative quasigroup with a corresponding identity.
 pub trait LoopMultiplicativeApprox

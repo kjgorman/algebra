@@ -26,26 +26,27 @@ use structure::MagmaMultiplicative;
 /// ~~~
 pub trait SemigroupAdditiveApprox
     : MagmaAdditiveApprox
+    + Copy
 {
     /// Returns `true` if associativity over addition holds approximately for
     /// the given arguments.
-    fn prop_add_is_associative_approx(args: (Self, Self, Self)) -> bool {
+    fn prop_add_is_associative_approx(args: (Self, Self, Self)) -> bool where Self : Sized {
         // TODO: use ApproxEq
         let (a, b, c) = args;
         (a + b) + c == a + (b + c)
     }
 }
 
-impl SemigroupAdditiveApprox for u8   {}
-impl SemigroupAdditiveApprox for u16  {}
-impl SemigroupAdditiveApprox for u32  {}
-impl SemigroupAdditiveApprox for u64  {}
-impl SemigroupAdditiveApprox for uint {}
-impl SemigroupAdditiveApprox for i8   {}
-impl SemigroupAdditiveApprox for i16  {}
-impl SemigroupAdditiveApprox for i32  {}
-impl SemigroupAdditiveApprox for i64  {}
-impl SemigroupAdditiveApprox for int  {}
+impl SemigroupAdditiveApprox for u8    {}
+impl SemigroupAdditiveApprox for u16   {}
+impl SemigroupAdditiveApprox for u32   {}
+impl SemigroupAdditiveApprox for u64   {}
+impl SemigroupAdditiveApprox for usize {}
+impl SemigroupAdditiveApprox for i8    {}
+impl SemigroupAdditiveApprox for i16   {}
+impl SemigroupAdditiveApprox for i32   {}
+impl SemigroupAdditiveApprox for i64   {}
+impl SemigroupAdditiveApprox for isize {}
 
 /// A type that is closed over an associative addition operator.
 ///
@@ -57,25 +58,26 @@ impl SemigroupAdditiveApprox for int  {}
 pub trait SemigroupAdditive
     : MagmaAdditive
     + SemigroupAdditiveApprox
+    + Copy
 {
     /// Returns `true` if associativity over addition holds for the given
     /// arguments.
-    fn prop_add_is_associative(args: (Self, Self, Self)) -> bool {
+    fn prop_add_is_associative(args: (Self, Self, Self)) -> bool where Self : Sized {
         let (a, b, c) = args;
         (a + b) + c == a + (b + c)
     }
 }
 
-impl SemigroupAdditive for u8   {}
-impl SemigroupAdditive for u16  {}
-impl SemigroupAdditive for u32  {}
-impl SemigroupAdditive for u64  {}
-impl SemigroupAdditive for uint {}
-impl SemigroupAdditive for i8   {}
-impl SemigroupAdditive for i16  {}
-impl SemigroupAdditive for i32  {}
-impl SemigroupAdditive for i64  {}
-impl SemigroupAdditive for int  {}
+impl SemigroupAdditive for u8    {}
+impl SemigroupAdditive for u16   {}
+impl SemigroupAdditive for u32   {}
+impl SemigroupAdditive for u64   {}
+impl SemigroupAdditive for usize {}
+impl SemigroupAdditive for i8    {}
+impl SemigroupAdditive for i16   {}
+impl SemigroupAdditive for i32   {}
+impl SemigroupAdditive for i64   {}
+impl SemigroupAdditive for isize {}
 
 /// A type that is closed over an approximately associative multiplication operator.
 ///
@@ -86,26 +88,27 @@ impl SemigroupAdditive for int  {}
 /// ~~~
 pub trait SemigroupMultiplicativeApprox
     : MagmaMultiplicativeApprox
+    + Copy
 {
     /// Returns `true` if associativity over multiplication holds approximately for
     /// the given arguments.
-    fn prop_mul_is_associative_approx(args: (Self, Self, Self)) -> bool {
+    fn prop_mul_is_associative_approx(args: (Self, Self, Self)) -> bool where Self : Sized {
         // TODO: use ApproxEq
         let (a, b, c) = args;
         (a * b) * c == a * (b * c)
     }
 }
 
-impl SemigroupMultiplicativeApprox for u8   {}
-impl SemigroupMultiplicativeApprox for u16  {}
-impl SemigroupMultiplicativeApprox for u32  {}
-impl SemigroupMultiplicativeApprox for u64  {}
-impl SemigroupMultiplicativeApprox for uint {}
-impl SemigroupMultiplicativeApprox for i8   {}
-impl SemigroupMultiplicativeApprox for i16  {}
-impl SemigroupMultiplicativeApprox for i32  {}
-impl SemigroupMultiplicativeApprox for i64  {}
-impl SemigroupMultiplicativeApprox for int  {}
+impl SemigroupMultiplicativeApprox for u8    {}
+impl SemigroupMultiplicativeApprox for u16   {}
+impl SemigroupMultiplicativeApprox for u32   {}
+impl SemigroupMultiplicativeApprox for u64   {}
+impl SemigroupMultiplicativeApprox for usize {}
+impl SemigroupMultiplicativeApprox for i8    {}
+impl SemigroupMultiplicativeApprox for i16   {}
+impl SemigroupMultiplicativeApprox for i32   {}
+impl SemigroupMultiplicativeApprox for i64   {}
+impl SemigroupMultiplicativeApprox for isize {}
 
 /// A type that is closed over an associative multiplication operator.
 ///
@@ -117,29 +120,30 @@ impl SemigroupMultiplicativeApprox for int  {}
 pub trait SemigroupMultiplicative
     : MagmaMultiplicative
     + SemigroupMultiplicativeApprox
+    + Copy
 {
     /// Returns `true` if associativity over multiplication holds for the given
     /// arguments.
-    fn prop_mul_is_associative(args: (Self, Self, Self)) -> bool {
+    fn prop_mul_is_associative(args: (Self, Self, Self)) -> bool where Self : Sized {
         let (a, b, c) = args;
         (a * b) * c == a * (b * c)
     }
 }
 
-impl SemigroupMultiplicative for u8   {}
-impl SemigroupMultiplicative for u16  {}
-impl SemigroupMultiplicative for u32  {}
-impl SemigroupMultiplicative for u64  {}
-impl SemigroupMultiplicative for uint {}
-impl SemigroupMultiplicative for i8   {}
-impl SemigroupMultiplicative for i16  {}
-impl SemigroupMultiplicative for i32  {}
-impl SemigroupMultiplicative for i64  {}
-impl SemigroupMultiplicative for int  {}
+impl SemigroupMultiplicative for u8    {}
+impl SemigroupMultiplicative for u16   {}
+impl SemigroupMultiplicative for u32   {}
+impl SemigroupMultiplicative for u64   {}
+impl SemigroupMultiplicative for usize {}
+impl SemigroupMultiplicative for i8    {}
+impl SemigroupMultiplicative for i16   {}
+impl SemigroupMultiplicative for i32   {}
+impl SemigroupMultiplicative for i64   {}
+impl SemigroupMultiplicative for isize {}
 
 #[cfg(test)]
 mod tests {
-    macro_rules! check_int {
+    macro_rules! check_isize {
         ($T:ident) => {
             mod $T {
                 use structure::SemigroupAdditiveApprox;
@@ -167,14 +171,14 @@ mod tests {
             }
         }
     }
-    check_int!(u8)
-    check_int!(u16)
-    check_int!(u32)
-    check_int!(u64)
-    check_int!(uint)
-    check_int!(i8)
-    check_int!(i16)
-    check_int!(i32)
-    check_int!(i64)
-    check_int!(int)
+    check_isize!(u8);
+    check_isize!(u16);
+    check_isize!(u32);
+    check_isize!(u64);
+    check_isize!(usize);
+    check_isize!(i8);
+    check_isize!(i16);
+    check_isize!(i32);
+    check_isize!(i64);
+    check_isize!(isize);
 }

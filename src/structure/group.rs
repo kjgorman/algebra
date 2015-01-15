@@ -28,16 +28,16 @@ pub trait GroupAdditiveApprox
     + MonoidAdditiveApprox
 {}
 
-impl GroupAdditiveApprox for u8   {}
-impl GroupAdditiveApprox for u16  {}
-impl GroupAdditiveApprox for u32  {}
-impl GroupAdditiveApprox for u64  {}
-impl GroupAdditiveApprox for uint {}
-impl GroupAdditiveApprox for i8   {}
-impl GroupAdditiveApprox for i16  {}
-impl GroupAdditiveApprox for i32  {}
-impl GroupAdditiveApprox for i64  {}
-impl GroupAdditiveApprox for int  {}
+impl GroupAdditiveApprox for u8    {}
+impl GroupAdditiveApprox for u16   {}
+impl GroupAdditiveApprox for u32   {}
+impl GroupAdditiveApprox for u64   {}
+impl GroupAdditiveApprox for usize {}
+impl GroupAdditiveApprox for i8    {}
+impl GroupAdditiveApprox for i16   {}
+impl GroupAdditiveApprox for i32   {}
+impl GroupAdditiveApprox for i64   {}
+impl GroupAdditiveApprox for isize {}
 
 pub trait GroupAdditive
     : GroupAdditiveApprox
@@ -45,16 +45,16 @@ pub trait GroupAdditive
     + MonoidAdditive
 {}
 
-impl GroupAdditive for u8   {}
-impl GroupAdditive for u16  {}
-impl GroupAdditive for u32  {}
-impl GroupAdditive for u64  {}
-impl GroupAdditive for uint {}
-impl GroupAdditive for i8   {}
-impl GroupAdditive for i16  {}
-impl GroupAdditive for i32  {}
-impl GroupAdditive for i64  {}
-impl GroupAdditive for int  {}
+impl GroupAdditive for u8    {}
+impl GroupAdditive for u16   {}
+impl GroupAdditive for u32   {}
+impl GroupAdditive for u64   {}
+impl GroupAdditive for usize {}
+impl GroupAdditive for i8    {}
+impl GroupAdditive for i16   {}
+impl GroupAdditive for i32   {}
+impl GroupAdditive for i64   {}
+impl GroupAdditive for isize {}
 
 pub trait GroupMultiplicativeApprox
     : LoopMultiplicativeApprox

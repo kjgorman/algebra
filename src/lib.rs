@@ -14,10 +14,6 @@
 
 //! Traits for generic mathematics.
 
-#![feature(globs)]
-#![feature(macro_rules)]
-#![feature(phase)]
-
 #[cfg(test)]
 #[phase(plugin)]
 extern crate quickcheck_macros;

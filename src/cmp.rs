@@ -26,12 +26,12 @@ pub trait ApproxEq<Eps> {
     /// Compare `a` and `b` for approximate equality using the default
     /// epsilon value returned by `ApproxEq::default_epsilon`.
     #[inline]
-    fn approx_eq(a: &Self, b: &Self) -> bool {
+    fn approx_eq(a: &Self, b: &Self) -> bool where Self : Sized {
         ApproxEq::approx_eq_eps(a, b, &ApproxEq::default_epsilon(None::<Self>))
     }
 }
 
-macro_rules! impl_approx_eq_for_uint {
+macro_rules! impl_approx_eq_for_usize {
     ($T:ty) => {
         impl ApproxEq<$T> for $T {
             #[inline]
@@ -45,7 +45,7 @@ macro_rules! impl_approx_eq_for_uint {
     }
 }
 
-macro_rules! impl_approx_eq_for_int {
+macro_rules! impl_approx_eq_for_isize {
     ($T:ty) => {
         impl ApproxEq<$T> for $T {
             #[inline]
@@ -73,15 +73,15 @@ macro_rules! impl_approx_eq_for_float {
     }
 }
 
-impl_approx_eq_for_uint!(u8)
-impl_approx_eq_for_uint!(u16)
-impl_approx_eq_for_uint!(u32)
-impl_approx_eq_for_uint!(u64)
-impl_approx_eq_for_uint!(uint)
-impl_approx_eq_for_int!(i8)
-impl_approx_eq_for_int!(i16)
-impl_approx_eq_for_int!(i32)
-impl_approx_eq_for_int!(i64)
-impl_approx_eq_for_int!(int)
-impl_approx_eq_for_float!(f32)
-impl_approx_eq_for_float!(f64)
+impl_approx_eq_for_usize!(u8);
+impl_approx_eq_for_usize!(u16);
+impl_approx_eq_for_usize!(u32);
+impl_approx_eq_for_usize!(u64);
+impl_approx_eq_for_usize!(usize);
+impl_approx_eq_for_isize!(i8);
+impl_approx_eq_for_isize!(i16);
+impl_approx_eq_for_isize!(i32);
+impl_approx_eq_for_isize!(i64);
+impl_approx_eq_for_isize!(isize);
+impl_approx_eq_for_float!(f32);
+impl_approx_eq_for_float!(f64);
