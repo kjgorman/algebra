@@ -21,7 +21,6 @@ use structure::GroupMultiplicative;
 
 pub trait GroupAdditiveAbelianApprox
     : GroupAdditiveApprox
-    + Copy
 {
     /// Returns `true` if the addition operator is approximately commutative for
     /// the given argument tuple.
@@ -45,7 +44,6 @@ impl GroupAdditiveAbelianApprox for isize {}
 pub trait GroupAdditiveAbelian
     : GroupAdditiveAbelianApprox
     + GroupAdditive
-    + Copy
 {
     /// Returns `true` if the addition operator is commutative for the given
     /// argument tuple.
@@ -68,7 +66,6 @@ impl GroupAdditiveAbelian for isize {}
 
 pub trait GroupMultiplicativeAbelianApprox
     : GroupMultiplicativeApprox
-    + Copy
 {
     /// Returns `true` if the multiplication operator is approximately
     /// commutative for the given argument tuple.
@@ -81,7 +78,6 @@ pub trait GroupMultiplicativeAbelianApprox
 pub trait GroupMultiplicativeAbelian
     : GroupMultiplicativeAbelianApprox
     + GroupMultiplicative
-    + Copy
 {
     /// Returns `true` if the multiplication operator is commutative for the
     /// given argument tuple.

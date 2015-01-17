@@ -29,7 +29,6 @@ use structure::{IdentityMultiplicative, unit};
 pub trait MonoidAdditiveApprox
     : SemigroupAdditiveApprox
     + IdentityAdditive
-    + Copy
 {
     /// Checks whether adding `0` is approximately a no-op for the given
     /// argument.
@@ -90,7 +89,6 @@ impl MonoidAdditive for isize {}
 pub trait MonoidMultiplicativeApprox
     : SemigroupMultiplicativeApprox
     + IdentityMultiplicative
-    + Copy
 {
     /// Checks whether multiplying by `1` is approximately a no-op for the given
     /// argument.
@@ -121,7 +119,6 @@ impl MonoidMultiplicativeApprox for isize {}
 pub trait MonoidMultiplicative
     : MonoidMultiplicativeApprox
     + SemigroupMultiplicative
-    + Copy
 {
     /// Checks whether multiplying by `1` is a no-op for the given argument.
     fn prop_mul_unit_is_noop(a: Self) -> bool where Self : Sized {
